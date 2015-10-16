@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Mvc", "HotelManagement.Mvc\HotelManagement.Mvc.csproj", "{EF9C76FA-69E4-414B-A09A-64BE7DE95FE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Tests", "HotelManagement.Tests\HotelManagement.Tests.csproj", "{279993C5-979A-407D-A704-B7556918BA1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.DataAccess", "HotelManagement.DataAccess\HotelManagement.DataAccess.csproj", "{AF550FE4-4FAA-4ADC-A76B-82165B4F5449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +23,10 @@ Global
 		{279993C5-979A-407D-A704-B7556918BA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279993C5-979A-407D-A704-B7556918BA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279993C5-979A-407D-A704-B7556918BA1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF550FE4-4FAA-4ADC-A76B-82165B4F5449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF550FE4-4FAA-4ADC-A76B-82165B4F5449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF550FE4-4FAA-4ADC-A76B-82165B4F5449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF550FE4-4FAA-4ADC-A76B-82165B4F5449}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

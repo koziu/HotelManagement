@@ -39,7 +39,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdoExecutor, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdoExecutor.1.1.0\lib\net45\AdoExecutor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -110,6 +126,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
@@ -159,15 +179,20 @@
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Conventers\Interfaces\IConventer.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ClientManager.cs" />
+    <Compile Include="Helpers\Interfaces\IClientManager.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -300,6 +325,9 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\dist\img\Thumbs.db" />
+    <Content Include="Images\icon.png" />
+    <Content Include="Images\icon32x32.ico" />
+    <Content Include="Images\icon64x64.ico" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
@@ -1100,6 +1128,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelManagement.DataAccess\HotelManagement.DataAccess.csproj">
+      <Project>{af550fe4-4faa-4adc-a76b-82165b4f5449}</Project>
+      <Name>HotelManagement.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
