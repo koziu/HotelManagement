@@ -1,0 +1,83 @@
+﻿@model IEnumerable<HotelManagement.Mvc.Models.RoomModels>
+@using System.Web.UI.WebControls  
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BedSBCOunt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BEdDBCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddtionalBed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FixedPricePerRoom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FixedPricePerPerson)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Floor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomCapacity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BedSBCOunt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BEdDBCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddtionalBed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FixedPricePerRoom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FixedPricePerPerson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Floor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomCapacity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

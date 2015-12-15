@@ -1,0 +1,105 @@
+﻿@model HotelManagement.Mvc.Models.RoomModels
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RoomModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BedSBCOunt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BedSBCOunt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BEdDBCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BEdDBCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddtionalBed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddtionalBed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FixedPricePerRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FixedPricePerRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FixedPricePerPerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FixedPricePerPerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomCapacity)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

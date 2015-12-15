@@ -1,9 +1,0 @@
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\bin\Debug\HotelManagement.DataAccess.dll
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\bin\Debug\HotelManagement.DataAccess.pdb
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\bin\Debug\AdoExecutor.dll
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\bin\Debug\AdoExecutor.pdb
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\obj\Debug\HotelManagement.DataAccess.dll
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\obj\Debug\HotelManagement.DataAccess.pdb
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\bin\Debug\Ninject.dll
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\bin\Debug\Ninject.xml
-E:\GitHub\HotelManagement\HotelManagement.DataAccess\obj\Debug\HotelManagement.DataAccess.csprojResolveAssemblyReference.cache

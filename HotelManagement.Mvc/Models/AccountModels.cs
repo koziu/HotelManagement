@@ -7,7 +7,7 @@ namespace HotelManagement.Mvc.Models
   public class UsersContext : DbContext
   {
     public UsersContext()
-      : base("DefaultConnection")
+          : base("HotelManagement")
     {
     }
 
@@ -18,8 +18,9 @@ namespace HotelManagement.Mvc.Models
   public class UserProfile
   {
     [Key]
-    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int UserId { get; set; }
+
     public string UserName { get; set; }
   }
 
