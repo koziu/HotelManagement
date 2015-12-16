@@ -4,7 +4,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Edytuj klienta</h3>
+                    <h3 class="box-title">Edytuj</h3>
                 </div>
                 <div class="box-body">
                     @using (Html.BeginForm())
@@ -130,13 +130,13 @@
 
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Zapisz zmiany" class="btn btn-default"/>
+                                    <input type="submit" value="Zapisz" class="btn btn-danger"/>
                                 </div>
                             </div>
                         </div>
                     }   
                     <div>
-                        @Html.ActionLink("Powrót", "Index")
+                        @Html.ActionLink("Powrót", "Index", null, new { @class = "btn btn-default" })
                     </div>
                 </div>
             </div>

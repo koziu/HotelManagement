@@ -72,11 +72,12 @@
       <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.WebPages.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -197,6 +198,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Conventers\Interfaces\IConventer.cs" />
     <Compile Include="DAL\Context\HotelManagementContext.cs" />
@@ -207,18 +209,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512081720123_all.cs" />
-    <Compile Include="Migrations\201512081720123_all.Designer.cs">
-      <DependentUpon>201512081720123_all.cs</DependentUpon>
+    <Compile Include="Migrations\201512161051291_2015_12_16_8_10_11.cs" />
+    <Compile Include="Migrations\201512161051291_2015_12_16_8_10_11.Designer.cs">
+      <DependentUpon>201512161051291_2015_12_16_8_10_11.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512121618011_ClientModified.cs" />
-    <Compile Include="Migrations\201512121618011_ClientModified.Designer.cs">
-      <DependentUpon>201512121618011_ClientModified.cs</DependentUpon>
+    <Compile Include="Migrations\201512161253031_2015_12_16_8_12_04.cs" />
+    <Compile Include="Migrations\201512161253031_2015_12_16_8_12_04.Designer.cs">
+      <DependentUpon>201512161253031_2015_12_16_8_12_04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512161310010_2015_12_16_8_14_09.cs" />
+    <Compile Include="Migrations\201512161310010_2015_12_16_8_14_09.Designer.cs">
+      <DependentUpon>201512161310010_2015_12_16_8_14_09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512161322577_2015_12_16_8_14_22.cs" />
+    <Compile Include="Migrations\201512161322577_2015_12_16_8_14_22.Designer.cs">
+      <DependentUpon>201512161322577_2015_12_16_8_14_22.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ClientModels.cs" />
     <Compile Include="Models\EmployeeModels.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\ReservationModels.cs" />
     <Compile Include="Models\RoomElementModels.cs" />
     <Compile Include="Models\RoomModels.cs" />
@@ -1091,7 +1102,9 @@
     <Content Include="Scripts\timepicker\bootstrap-timepicker.js" />
     <Content Include="Scripts\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Scripts\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1146,6 +1159,11 @@
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Reservation\Create.cshtml" />
+    <Content Include="Views\Reservation\Delete.cshtml" />
+    <Content Include="Views\Reservation\Details.cshtml" />
+    <Content Include="Views\Reservation\Edit.cshtml" />
+    <Content Include="Views\Reservation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1158,11 +1176,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512081720123_all.resx">
-      <DependentUpon>201512081720123_all.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512161051291_2015_12_16_8_10_11.resx">
+      <DependentUpon>201512161051291_2015_12_16_8_10_11.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512121618011_ClientModified.resx">
-      <DependentUpon>201512121618011_ClientModified.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512161253031_2015_12_16_8_12_04.resx">
+      <DependentUpon>201512161253031_2015_12_16_8_12_04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512161310010_2015_12_16_8_14_09.resx">
+      <DependentUpon>201512161310010_2015_12_16_8_14_09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512161322577_2015_12_16_8_14_22.resx">
+      <DependentUpon>201512161322577_2015_12_16_8_14_22.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

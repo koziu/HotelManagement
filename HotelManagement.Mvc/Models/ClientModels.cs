@@ -1,9 +1,14 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Http;
+using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
 using HotelManagement.Mvc.Enums;
 
 namespace HotelManagement.Mvc.Models
 {
+  [RoutePrefix("Klienci")]
+  [Table("Client")]
   public class ClientModels
   {
     [Key]
@@ -45,6 +50,7 @@ namespace HotelManagement.Mvc.Models
     [Required(ErrorMessage = "Musisz podać naziwsko")]
     public string Surname { get; set; }
 
+    [Display(Name = "PESEL")]
     [Required(ErrorMessage = "Musisz podać PESEL")]
     public string TaxId { get; set; }
 

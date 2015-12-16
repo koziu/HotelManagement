@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using HotelManagement.Mvc.Enums;
 
 namespace HotelManagement.Mvc.Models
 {
+  [Table("Reservation")]
   public class ReservationModels
   {
+    //public ReservationModels()
+    //{
+    //  Events = new HashSet<Event>();
+    //}
+    [Key]
     public Guid Id { get; set; }
-    public virtual IEnumerable<RoomModels> Rooms { get; set; }
-    public double Price { get; set; }
-    public ReservationStates ReservationState { get; set; }
-    public DateTime ArriveDate { get; set; }
-    public DateTime DepatureDate { get; set; }
     public ClientModels Client { get; set; }
+    public virtual ICollection<Event> Events { get; set; } 
   }
 }
