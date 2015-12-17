@@ -28,6 +28,8 @@ namespace HotelManagement.Mvc.Controllers
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
       ReservationModels reservationModels = await db.ReservationModelses.FindAsync(id);
+      reservationModels.Client = await db.ClientModels.FindAsync(reservationModels.ClientId);
+
       if (reservationModels == null)
       {
         return HttpNotFound();

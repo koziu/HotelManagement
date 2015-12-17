@@ -9,13 +9,16 @@ namespace HotelManagement.Mvc.Models
   [Table("Reservation")]
   public class ReservationModels
   {
-    //public ReservationModels()
-    //{
-    //  Events = new HashSet<Event>();
-    //}
+    public ReservationModels()
+    {
+      Events = new HashSet<Event>();
+    }
     [Key]
-    public Guid Id { get; set; }
-    public ClientModels Client { get; set; }
+    public Guid Id { get; set; }    
+    public Guid ClientId { get; set; }
+
+    
+    public virtual ClientModels Client { get; set; }
     public virtual ICollection<Event> Events { get; set; } 
   }
 }

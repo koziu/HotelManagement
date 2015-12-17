@@ -1,94 +1,80 @@
 ﻿@model HotelManagement.Mvc.Models.RoomModels
-
-<h2>Details</h2>
-
-<div>
-    <h4>RoomModels</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.RoomName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RoomName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RoomState)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RoomState)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BedSBCOunt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BedSBCOunt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BEdDBCount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BEdDBCount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AddtionalBed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AddtionalBed)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FixedPricePerRoom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FixedPricePerRoom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FixedPricePerPerson)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FixedPricePerPerson)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RoomDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RoomDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Floor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Floor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RoomCapacity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RoomCapacity)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Szczegóły</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RoomName)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.RoomName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RoomState)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.RoomState)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BedSBCOunt)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.BedSBCOunt)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BEdDBCount)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.BEdDBCount)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.AddtionalBed)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.AddtionalBed)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FixedPricePerRoom)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.FixedPricePerRoom)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FixedPricePerPerson)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.FixedPricePerPerson)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RoomDescription)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.RoomDescription)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Floor)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Floor)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RoomCapacity)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.RoomCapacity)
+                        </dd>
+                    </dl>
+                    <p>
+                        @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Powrót", "Index", null, new { @class = "btn btn-default" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

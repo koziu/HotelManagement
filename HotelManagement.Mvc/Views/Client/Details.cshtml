@@ -6,6 +6,7 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Szczegóły</h3>
+                    <hr />
                 </div>
                 <div class="box-body">
                     <dl class="dl-horizontal">
@@ -96,7 +97,7 @@
                     </dl>
                     <p>
                         @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }, new { @class = "btn btn-danger" })
-                        @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-default" })
+                        @Html.ActionLink("Powrót", "Index", null, new { @class = "btn btn-default" })
                     </p>
                 </div>
             </div>

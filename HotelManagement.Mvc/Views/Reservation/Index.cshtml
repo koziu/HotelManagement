@@ -13,7 +13,7 @@
 <table class="table">
     @*<tr>
         <th>
-            @Html.DisplayNameFor(model => model.Events.Select(x => x.ArriveDate))
+            @Html.DisplayNameFor(model => model.Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Events.Select(x => x.DepatureDate))
@@ -39,26 +39,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            @foreach (var _event in item.Events)
-            {
-
-            <td>
-                @Html.DisplayFor(modelItem => _event.ArriveDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => _event.DepatureDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => _event.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => _event.ReservationState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => _event.Room.RoomName)
-            </td>
-
-            }
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Client.Name)
             </td>

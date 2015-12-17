@@ -1,27 +1,109 @@
-﻿@model HotelManagement.Mvc.Models.ReservationModels
+﻿@using HotelManagement.Mvc.Models
+@model HotelManagement.Mvc.Models.ReservationModels
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"><b>Szczegóły</b></h3>
+                    <hr />
+                </div>
+                <div class="box-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Client.Name)
+                        </dt>
 
-@{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+                        <dd>
+                            @Html.DisplayFor(model => model.Client.Name)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Client.Surname)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Client.Surname)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Client.TaxId)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Client.TaxId)  
+                        </dd>
+                    </dl>
+                    <hr/>
+                    <table id="tableConf" class="display table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td>
+                                    @Html.DisplayName("Data przyjazdu")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Data wyjazdu")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Cena")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Status rezerwacji")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Nazwa pokoju")
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Event _event in Model.Events)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => _event.ArriveDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => _event.DepatureDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => _event.Price)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => _event.ReservationState)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => _event.Room.RoomName)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    @Html.DisplayName("Data przyjazdu")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Data wyjazdu")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Cena")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Status rezerwacji")
+                                </td>
+                                <td>
+                                    @Html.DisplayName("Nazwa pokoju")
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <hr/>
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new {id = Model.Id}) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jquery.dataTables")
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>ReservationModels</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Events.Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Events.Id)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

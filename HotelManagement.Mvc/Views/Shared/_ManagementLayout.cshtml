@@ -401,6 +401,10 @@ immediately after the control sidebar -->
 	<script>
 		$(document).ready(function() {
 		    var path = location.pathname;
+		    var firstSlash = path.indexOf('/', 1);
+		    if (firstSlash > -1) {
+		        path = path.substring(0, path.indexOf('/', 1));
+		    }
 		    $(function() {
 		        $('.sidebar-menu li').filter(function () {
 		            $(this).removeClass('active');

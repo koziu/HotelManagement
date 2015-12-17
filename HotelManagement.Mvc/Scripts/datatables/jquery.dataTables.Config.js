@@ -14,7 +14,8 @@
         if ($(this).index() !== (tableLenght-1))
         {
             var title = $("#tableConf thead tr").eq($(this).index()).text();
-            $(this).html('<input type="text" placeholder="Wyświetl '+title+'" />');
+            $(trim(title));
+            $(this).html('<input type="text" placeholder="D' + title + '" />');
         }
     });
 

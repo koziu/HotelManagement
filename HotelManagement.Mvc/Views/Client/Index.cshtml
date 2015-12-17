@@ -4,8 +4,10 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Klienci</h3>
-                    <p>@Html.ActionLink("Dodaj nowego klienta", "Create")</p>
+                    <h3 class="box-title"><b>Klienci</b></h3>
+                <hr/>
+                    <p align="left">@Html.ActionLink("Dodaj nowego klienta", "Create",null, new {@class = "btn btn-danger", @align="right"})</p>
+                    <hr />
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <table id="tableConf" class="display table table-bordered table-striped">

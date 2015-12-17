@@ -225,6 +225,14 @@
     <Compile Include="Migrations\201512161322577_2015_12_16_8_14_22.Designer.cs">
       <DependentUpon>201512161322577_2015_12_16_8_14_22.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512170930336_2015-12-17-10-30.cs" />
+    <Compile Include="Migrations\201512170930336_2015-12-17-10-30.Designer.cs">
+      <DependentUpon>201512170930336_2015-12-17-10-30.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512171202496_ReservationId.cs" />
+    <Compile Include="Migrations\201512171202496_ReservationId.Designer.cs">
+      <DependentUpon>201512171202496_ReservationId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ClientModels.cs" />
@@ -237,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DefaultConnection.mdf" />
+    <Content Include="App_Data\DefaultConnection_log.ldf">
+      <DependentUpon>DefaultConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -1187,6 +1198,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512161322577_2015_12_16_8_14_22.resx">
       <DependentUpon>201512161322577_2015_12_16_8_14_22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512170930336_2015-12-17-10-30.resx">
+      <DependentUpon>201512170930336_2015-12-17-10-30.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512171202496_ReservationId.resx">
+      <DependentUpon>201512171202496_ReservationId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
