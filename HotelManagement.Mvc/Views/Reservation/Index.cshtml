@@ -1,57 +1,79 @@
-﻿@model IEnumerable<HotelManagement.Mvc.Models.ReservationModels>
+﻿@using HotelManagement.Mvc.Models
+@model IEnumerable<HotelManagement.Mvc.Models.ReservationModels>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title fa fa-calendar"> | <b>Rezerwacje klientów</b></h3>
+                    <hr/>
+                    <p>@Html.ActionLink("Utwórz rezerwacje dla nowego klienta", "Create", null, new { @class = "btn btn-danger" })</p>
+                    <hr/>
+                    <div class="box-body ">
+                        <table id="tableConf" class="display table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Client.Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Client.Surname)
+                                    </th>
+                                    @*<th>
+                    @Html.DisplayNameFor(model => model.Events.Select(x => x.Price))
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Events.Select(x => x.ReservationState))
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Events.Select(x =>x.Room).FirstOrDefault())
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Client.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Client.Surname)
+                </th>*@
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (ReservationModels item in Model)
+                                {
+                                    <tr>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Client.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Client.Surname)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Client.Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Client.Surname)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    @Scripts.Render("~/bundles/jquery.dataTables")
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    @*<tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Events.Select(x => x.DepatureDate))
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Events.Select(x => x.Price))
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Events.Select(x => x.ReservationState))
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Events.Select(x =>x.Room).FirstOrDefault())
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Client.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Client.Surname)
-        </th>
-        <th></th>
-    </tr>*@
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Client.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Client.Surname)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>

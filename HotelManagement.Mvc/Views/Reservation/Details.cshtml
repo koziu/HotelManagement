@@ -56,6 +56,12 @@
                             {
                                 <tr>
                                     <td>
+                                        @Html.DisplayFor(modelItem => _event.Room.RoomName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => _event.ReservationState)
+                                    </td>
+                                    <td>
                                         @Html.DisplayFor(modelItem => _event.ArriveDate)
                                     </td>
                                     <td>
@@ -63,12 +69,6 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => _event.Price)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => _event.ReservationState)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => _event.Room.RoomName)
                                     </td>
                                 </tr>
                             }
@@ -106,4 +106,5 @@
 
 @section scripts{
     @Scripts.Render("~/bundles/jquery.dataTables")
+    @Scripts.Render("~/bundles/jquery")
 }

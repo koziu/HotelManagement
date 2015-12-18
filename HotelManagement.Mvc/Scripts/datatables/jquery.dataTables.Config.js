@@ -13,9 +13,9 @@
     $("#tableConf tfoot th").each(function () {
         if ($(this).index() !== (tableLenght-1))
         {
-            var title = $("#tableConf thead tr").eq($(this).index()).text();
-            $(trim(title));
-            $(this).html('<input type="text" placeholder="D' + title + '" />');
+            var title = $("#tableConf thead th").eq($(this).index()).text();
+            title = title.toLowerCase().replace(/\s+/, "");
+            $(this).html('<input type="text" placeholder=" Filtruj '+title+'" />');
         }
     });
 

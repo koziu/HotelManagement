@@ -233,9 +233,14 @@
     <Compile Include="Migrations\201512171202496_ReservationId.Designer.cs">
       <DependentUpon>201512171202496_ReservationId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512180702327_ReservationId1.cs" />
+    <Compile Include="Migrations\201512180702327_ReservationId1.Designer.cs">
+      <DependentUpon>201512180702327_ReservationId1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ClientModels.cs" />
+    <Compile Include="Models\ClientsReservationModels.cs" />
     <Compile Include="Models\EmployeeModels.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\ReservationModels.cs" />
@@ -254,6 +259,8 @@
     <Content Include="Content\bootstrap\js\bootstrap.js" />
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap\js\npm.js" />
+    <Content Include="Content\chosen\chosen.css" />
+    <Content Include="Content\chosen\chosen.min.css" />
     <Content Include="Content\dist\css\AdminLTE.css" />
     <Content Include="Content\dist\css\AdminLTE.min.css" />
     <Content Include="Content\dist\css\skins\skin-black-light.css" />
@@ -359,6 +366,10 @@
     <Content Include="Images\icon.png" />
     <Content Include="Images\icon32x32.ico" />
     <Content Include="Images\icon64x64.ico" />
+    <Content Include="Scripts\chosen\chosen.jquery.js" />
+    <Content Include="Scripts\chosen\chosen.jquery.min.js" />
+    <Content Include="Scripts\chosen\chosen.proto.js" />
+    <Content Include="Scripts\chosen\chosen.proto.min.js" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
@@ -1204,6 +1215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512171202496_ReservationId.resx">
       <DependentUpon>201512171202496_ReservationId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512180702327_ReservationId1.resx">
+      <DependentUpon>201512180702327_ReservationId1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,8 +7,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Panel Administracyjny</title>
-	<!-- Icon -->
+    <title>Panel Administracyjny</title>
+    
+    @RenderSection("css", false)
+    @section css{
+        @Styles.Render("~/Content/themes/base/css")
+    }
+    <!-- Icon -->
 	<link rel="shortcut icon" href="/Images/icon64x64.ico">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -22,6 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<link rel="stylesheet" href="~/Scripts/datatables/dataTables.bootstrap.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="~/Content/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/Content/chosen/chosen.min.css">
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
 	folder instead of downloading all of them to reduce the load. -->
 
@@ -380,8 +386,9 @@ immediately after the control sidebar -->
 @*<div class="control-sidebar-bg"></div>*@
 @*</div>*@<!-- ./wrapper -->
 
+      
 <!-- REQUIRED JS SCRIPTS -->
-
+    @Scripts.Render("~/Content/themes/base/css")
 <!-- jQuery 2.1.4 -->
 <script src="~/Scripts/jQuery/jQuery-2.1.4.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
@@ -397,26 +404,32 @@ immediately after the control sidebar -->
 	<script src="~/Content/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 	<script src="~/Content/dist/js/demo.js"></script>
+	
+	<script src="~/Scripts/chosen/chosen.jquery.min.js"></script>
 	<!-- page script -->
-	<script>
-		$(document).ready(function() {
-		    var path = location.pathname;
-		    var firstSlash = path.indexOf('/', 1);
-		    if (firstSlash > -1) {
-		        path = path.substring(0, path.indexOf('/', 1));
-		    }
-		    $(function() {
-		        $('.sidebar-menu li').filter(function () {
-		            $(this).removeClass('active');
-		            if ($(this).children('a').attr('href') === path) {
-		                $(this).addClass('active');
-		            }
-		        });
-		    });
-		});
-	</script>
+    <script>
+        $(document).ready(function() {
+            var path = location.pathname;
+            var firstSlash = path.indexOf('/', 1);
+            if (firstSlash > -1) {
+                path = path.substring(0, path.indexOf('/', 1));
+            }
+            $(function() {
+                $('.sidebar-menu li').filter(function () {
+                    $(this).removeClass('active');
+                    if ($(this).children('a').attr('href') === path) {
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        });
+    </script>
 
-@Scripts.Render("~/Content/themes/base/css")
-@RenderSection("scripts", false)       
+    @RenderSection("scripts", false)
+
+    @section scripts{
+        @Scripts.Render("~/bundles/jquery")
+    }
+    
 </body>
 </html>

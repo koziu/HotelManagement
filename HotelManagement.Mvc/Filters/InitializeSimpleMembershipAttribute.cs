@@ -38,7 +38,7 @@ namespace HotelManagement.Mvc.Filters
             }
           }
 
-          WebSecurity.InitializeDatabaseConnection("HotelManagementEncode", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+          WebSecurity.InitializeDatabaseConnection("HotelManagement", "UserProfile", "UserId", "UserName", autoCreateTables: true);
         }
         catch (Exception ex)
         {

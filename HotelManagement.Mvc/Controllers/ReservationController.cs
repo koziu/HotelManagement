@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -40,27 +41,53 @@ namespace HotelManagement.Mvc.Controllers
     // GET: ReservationModels/Create
     public ActionResult Create()
     {
+      IQueryable<ClientModels> clients = db.ClientModels;
+      var clientsFullName = GetAllClientFullName(clients);
+      var model = new ClientsReservationModels();
+
+      model.Clients = GetSelectListItems(clientsFullName);
+     
+
+      //ViewBag.ClientId = new SelectList(db.ClientModels, "Id", "Surname");
+      ViewBag.RoomId = new SelectList(db.RoomModels, "Id", "RoomName");
       ViewBag.Id = new SelectList(db.Events, "Id", "Id");
-      return View();
+      return View(model);
     }
 
-    // POST: ReservationModels/Create
+    private static IEnumerable<string> GetAllClientFullName(IQueryable<ClientModels> clients )
+    {
+      return clients.Select(c => c.Name + " " + c.Surname).ToList();
+    }
+
+    private static IEnumerable<SelectListItem> GetSelectListItems(IEnumerable<string> elements)
+    {
+      var selectList = elements.Select(element => new SelectListItem
+      {
+        Value = element, Text = element
+      }).ToList();
+      return selectList;
+    }
+
+      // POST: ReservationModels/Create
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
     // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Create([Bind(Include = "Id")] ReservationModels reservationModels)
+    public async Task<ActionResult> Create([Bind(Include = "Id,ClientId,Price,ReservationState,ArriveDate,DepatureDate,Room_Id")] ClientsReservationModels clientReservation)
     {
+      var reservation = new ReservationModels();
       if (ModelState.IsValid)
       {
-        reservationModels.Id = Guid.NewGuid();
-        db.ReservationModelses.Add(reservationModels);
+        reservation.Id = Guid.NewGuid();
+        reservation.ClientId = clientReservation.SelectedClientId;
+        //Events = clientReservation.Event
+        db.ReservationModelses.Add(reservation);
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
 
-      ViewBag.Id = new SelectList(db.Events, "Id", "Id", reservationModels.Id);
-      return View(reservationModels);
+      ViewBag.Id = new SelectList(db.Events, "Id", "Id", reservation.Id);
+      return View(clientReservation);
     }
 
     // GET: ReservationModels/Edit/5

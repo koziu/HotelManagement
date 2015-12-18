@@ -4,7 +4,8 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Dodaj nowego pracownika</h3>
+                    <h3 class="box-title fa fa-odnoklassniki"> | <b>Dodaj nowego pracownika</b></h3>
+                    <hr/>
                 </div>
                 <div class="box-body">
                     @using (Html.BeginForm())
@@ -12,8 +13,6 @@
                         @Html.AntiForgeryToken()
 
                         <div class="form-horizontal">
-                            <h4>Wypełnij formularz</h4>
-                            <hr />
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})
                                 <div class="col-md-10">

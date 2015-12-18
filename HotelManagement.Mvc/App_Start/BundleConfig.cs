@@ -10,10 +10,12 @@ namespace HotelManagement.Mvc.App_Start
       {
           bundles.Add(new ScriptBundle("~/bundles/jquery.dataTables").Include(
                       "~/Scripts/datatables/jquery.dataTables.min.js",
-                      "~/Scripts/datatables/jquery.dataTables.Config.js"));
+                      "~/Scripts/datatables/jquery.dataTables.Config.js"
+                     ));
 
           bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                       "~/Scripts/jquery-{version}.js"));
+                       "~/Scripts/jquery-{version}.js",
+                       "~/Scripts/chosen/chosen.jquery.min.js"));
 
           bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                       "~/Scripts/jquery-ui-{version}.js"));
@@ -41,7 +43,8 @@ namespace HotelManagement.Mvc.App_Start
                   "~/Content/themes/base/jquery.ui.tabs.css",
                   "~/Content/themes/base/jquery.ui.datepicker.css",
                   "~/Content/themes/base/jquery.ui.progressbar.css",
-                  "~/Content/themes/base/jquery.ui.theme.css"));
+                  "~/Content/themes/base/jquery.ui.theme.css",
+                  "~/Content/chosen/chosen.min.css"));
       bundles.Add(new StyleBundle("~/Content/css").Include(
         "~/Content/bootstrap/css/bootstrap.min.css",
         "~/Content/dist/css/AdminLTE.min.css",
