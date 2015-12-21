@@ -95,8 +95,8 @@
                     </table>
                     <hr/>
                     <p>
-                        @Html.ActionLink("Edit", "Edit", new {id = Model.Id}) |
-                        @Html.ActionLink("Back to List", "Index")
+                        @Html.ActionLink("Edytuj", "Edit", new {id = Model.Id}, new {@class = "btn btn-danger"}) 
+                        @Html.ActionLink("Powrót", "Index", null, new {@class = "btn btn-default"})
                     </p>
                 </div>
             </div>

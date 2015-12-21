@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using HotelManagement.Mvc.DAL.Context;
@@ -41,53 +42,79 @@ namespace HotelManagement.Mvc.Controllers
     // GET: ReservationModels/Create
     public ActionResult Create()
     {
-      IQueryable<ClientModels> clients = db.ClientModels;
-      var clientsFullName = GetAllClientFullName(clients);
-      var model = new ClientsReservationModels();
-
-      model.Clients = GetSelectListItems(clientsFullName);
-     
-
-      //ViewBag.ClientId = new SelectList(db.ClientModels, "Id", "Surname");
-      ViewBag.RoomId = new SelectList(db.RoomModels, "Id", "RoomName");
       ViewBag.Id = new SelectList(db.Events, "Id", "Id");
-      return View(model);
+      return View(GetClientsReservationModels());
     }
 
-    private static IEnumerable<string> GetAllClientFullName(IQueryable<ClientModels> clients )
+    private ClientsReservationModels GetClientsReservationModels()
     {
-      return clients.Select(c => c.Name + " " + c.Surname).ToList();
-    }
+      IQueryable<ClientModels> clients = db.ClientModels;
+      IQueryable<RoomModels> rooms = db.RoomModels;
 
-    private static IEnumerable<SelectListItem> GetSelectListItems(IEnumerable<string> elements)
+      return new ClientsReservationModels
+      {
+        Clients = GetSelectClientListItems(clients),
+        Rooms = GetSelectRoomListItems(rooms)
+      };
+    }
+    
+    private static IEnumerable<SelectListItem> GetSelectClientListItems(IEnumerable<ClientModels> elements)
     {
       var selectList = elements.Select(element => new SelectListItem
       {
-        Value = element, Text = element
+        Value = element.Id.ToString(), Text = element.Name + element.Surname
       }).ToList();
       return selectList;
     }
 
+    private static IEnumerable<SelectListItem> GetSelectRoomListItems(IEnumerable<RoomModels> elements)
+    {
+      var selectList = elements.Select(element => new SelectListItem
+      {
+        Value = element.Id.ToString(),
+        Text = element.RoomName
+      }).ToList();
+      return selectList;
+    }
       // POST: ReservationModels/Create
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
     // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Create([Bind(Include = "Id,ClientId,Price,ReservationState,ArriveDate,DepatureDate,Room_Id")] ClientsReservationModels clientReservation)
+    [ValidateAntiForgeryToken]//[Bind(Include = "SelectedClientId,SelectedRoomId,ArriveDate")] 
+    public async Task<ActionResult> Create([Bind(Include = "SelectedClientId, SelectedRoomId, Event")] ClientsReservationModels clientReservation)
     {
       var reservation = new ReservationModels();
-      if (ModelState.IsValid)
+      var events = new Event();
+      try
       {
         reservation.Id = Guid.NewGuid();
         reservation.ClientId = clientReservation.SelectedClientId;
-        //Events = clientReservation.Event
-        db.ReservationModelses.Add(reservation);
+
+        events.Id = Guid.NewGuid();
+        events.ArriveDate = clientReservation.Event.ArriveDate;
+        events.DepatureDate = clientReservation.Event.DepatureDate;
+        events.Reservation = new ReservationModels
+        {
+          Id = reservation.Id,
+          ClientId = clientReservation.SelectedClientId
+        };
+        events.Room = db.RoomModels.FirstOrDefault(x => x.Id == clientReservation.SelectedRoomId);
+        events.ReservationState = clientReservation.Event.ReservationState;
+        events.Price = db.RoomModels.Where(x => x.Id == events.Room.Id).Select(x => x.FixedPricePerRoom).First();
+        events.Reservation = reservation;
+        db.Events.Add(events);
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
-      }
 
-      ViewBag.Id = new SelectList(db.Events, "Id", "Id", reservation.Id);
-      return View(clientReservation);
+      }
+      catch (Exception)
+      {
+        ViewBag.Id = new SelectList(db.Events, "Id", "Id", reservation.Id);
+        return View(GetClientsReservationModels());
+      }
+      
+
+     
     }
 
     // GET: ReservationModels/Edit/5

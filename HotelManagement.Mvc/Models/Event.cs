@@ -20,7 +20,8 @@ namespace HotelManagement.Mvc.Models
 
     [Display(Name = "Cena")]
     [Required(ErrorMessage = "Musisz podać cene")]
-    public double Price { get; set; }
+    public double Price { get; 
+      set ; }
 
     [Display(Name = "Status")]
     [Required(ErrorMessage = "Musisz wybrać status")]

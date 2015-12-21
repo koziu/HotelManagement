@@ -8,8 +8,8 @@ namespace HotelManagement.Mvc.Models
 {
   public class ClientsReservationModels
   {
-    private readonly List<ClientModels> _clients;
-    private readonly List<RoomModels> _rooms;
+    //private readonly List<ClientModels> _clients;
+    //private readonly List<RoomModels> _rooms;
 
     [Display(Name = "Klient")]
     public Guid SelectedClientId { get; set; }
