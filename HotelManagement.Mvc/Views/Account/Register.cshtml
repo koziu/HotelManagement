@@ -27,6 +27,58 @@
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
+            <li>
+                @Html.LabelFor(m => m.Client.Name)
+                @Html.TextBoxFor(m => m.Client.Name)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.Surname)
+                @Html.TextBoxFor(m => m.Client.Surname)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.Email)
+                @Html.TextBoxFor(m => m.Client.Email)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.PhoneNumber)
+                @Html.TextBoxFor(m => m.Client.PhoneNumber)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.Street)
+                @Html.TextBoxFor(m => m.Client.Street)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.City)
+                @Html.TextBoxFor(m => m.Client.City)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.PostalCode)
+                @Html.TextBoxFor(m => m.Client.PostalCode)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.BrithDay)
+                @Html.TextBoxFor(m => m.Client.BrithDay)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.BrithPlace)
+                @Html.TextBoxFor(m => m.Client.BrithPlace)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.IdentityCardNumber)
+                @Html.TextBoxFor(m => m.Client.IdentityCardNumber)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.TaxId)
+                @Html.TextBoxFor(m => m.Client.TaxId)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.CompanyName)
+                @Html.TextBoxFor(m => m.Client.CompanyName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Client.REGON)
+                @Html.TextBoxFor(m => m.Client.REGON)
+            </li>
         </ol>
         <input type="submit" value="Register" />
     </fieldset>

@@ -210,33 +210,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512161051291_2015_12_16_8_10_11.cs" />
-    <Compile Include="Migrations\201512161051291_2015_12_16_8_10_11.Designer.cs">
-      <DependentUpon>201512161051291_2015_12_16_8_10_11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512161253031_2015_12_16_8_12_04.cs" />
-    <Compile Include="Migrations\201512161253031_2015_12_16_8_12_04.Designer.cs">
-      <DependentUpon>201512161253031_2015_12_16_8_12_04.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512161310010_2015_12_16_8_14_09.cs" />
-    <Compile Include="Migrations\201512161310010_2015_12_16_8_14_09.Designer.cs">
-      <DependentUpon>201512161310010_2015_12_16_8_14_09.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512161322577_2015_12_16_8_14_22.cs" />
-    <Compile Include="Migrations\201512161322577_2015_12_16_8_14_22.Designer.cs">
-      <DependentUpon>201512161322577_2015_12_16_8_14_22.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512170930336_2015-12-17-10-30.cs" />
-    <Compile Include="Migrations\201512170930336_2015-12-17-10-30.Designer.cs">
-      <DependentUpon>201512170930336_2015-12-17-10-30.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512171202496_ReservationId.cs" />
-    <Compile Include="Migrations\201512171202496_ReservationId.Designer.cs">
-      <DependentUpon>201512171202496_ReservationId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512180702327_ReservationId1.cs" />
-    <Compile Include="Migrations\201512180702327_ReservationId1.Designer.cs">
-      <DependentUpon>201512180702327_ReservationId1.cs</DependentUpon>
+    <Compile Include="Migrations\201512221415441_new.cs" />
+    <Compile Include="Migrations\201512221415441_new.Designer.cs">
+      <DependentUpon>201512221415441_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -1227,26 +1203,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512161051291_2015_12_16_8_10_11.resx">
-      <DependentUpon>201512161051291_2015_12_16_8_10_11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512161253031_2015_12_16_8_12_04.resx">
-      <DependentUpon>201512161253031_2015_12_16_8_12_04.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512161310010_2015_12_16_8_14_09.resx">
-      <DependentUpon>201512161310010_2015_12_16_8_14_09.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512161322577_2015_12_16_8_14_22.resx">
-      <DependentUpon>201512161322577_2015_12_16_8_14_22.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512170930336_2015-12-17-10-30.resx">
-      <DependentUpon>201512170930336_2015-12-17-10-30.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512171202496_ReservationId.resx">
-      <DependentUpon>201512171202496_ReservationId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512180702327_ReservationId1.resx">
-      <DependentUpon>201512180702327_ReservationId1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512221415441_new.resx">
+      <DependentUpon>201512221415441_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

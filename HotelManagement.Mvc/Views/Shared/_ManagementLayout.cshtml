@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.UI.WebControls
+<!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -7,14 +8,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Panel Administracyjny</title>
-    
-    @RenderSection("css", false)
-    @section css{
-        @Styles.Render("~/Content/themes/base/css")
-    }
+	<title>Panel Administracyjny</title>
+	
+	@RenderSection("css", false)
+	@section css{
+		@Styles.Render("~/Content/themes/base/css")
+	}
 
-    <!-- Icon -->
+	<!-- Icon -->
 	<link rel="shortcut icon" href="/Images/icon64x64.ico">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -28,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<link rel="stylesheet" href="~/Scripts/datatables/dataTables.bootstrap.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="~/Content/dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="~/Content/chosen/chosen.min.css">
+	<link rel="stylesheet" href="~/Content/chosen/chosen.min.css">
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
 	folder instead of downloading all of them to reduce the load. -->
 
@@ -214,10 +215,10 @@ desired effect
 						<!-- Menu Footer-->
 						<li class="user-footer">
 							<div class="pull-left">
-								<a href="#" class="btn btn-default btn-flat">Profile</a>
+								<a href="#" class="btn btn-default btn-flat">Profil</a>
 							</div>
 							<div class="pull-right">
-								<a href="#" class="btn btn-default btn-flat">Sign out</a>
+								<a href="@Url.Action("LogOff", "Account")" class="btn btn-default btn-flat">Wyloguj</a>
 							</div>
 						</li>
 					</ul>
@@ -387,9 +388,9 @@ immediately after the control sidebar -->
 @*<div class="control-sidebar-bg"></div>*@
 @*</div>*@<!-- ./wrapper -->
 
-      
+	  
 <!-- REQUIRED JS SCRIPTS -->
-    @Scripts.Render("~/Content/themes/base/css")
+	@Scripts.Render("~/Content/themes/base/css")
 <!-- jQuery 2.1.4 -->
 <script src="~/Scripts/jQuery/jQuery-2.1.4.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
@@ -408,29 +409,29 @@ immediately after the control sidebar -->
 	
 	<script src="~/Scripts/chosen/chosen.jquery.min.js"></script>
 	<!-- page script -->
-    <script>
-        $(document).ready(function() {
-            var path = location.pathname;
-            var firstSlash = path.indexOf('/', 1);
-            if (firstSlash > -1) {
-                path = path.substring(0, path.indexOf('/', 1));
-            }
-            $(function() {
-                $('.sidebar-menu li').filter(function () {
-                    $(this).removeClass('active');
-                    if ($(this).children('a').attr('href') === path) {
-                        $(this).addClass('active');
-                    }
-                });
-            });
-        });
-    </script>
+	<script>
+		$(document).ready(function() {
+			var path = location.pathname;
+			var firstSlash = path.indexOf('/', 1);
+			if (firstSlash > -1) {
+				path = path.substring(0, path.indexOf('/', 1));
+			}
+			$(function() {
+				$('.sidebar-menu li').filter(function () {
+					$(this).removeClass('active');
+					if ($(this).children('a').attr('href') === path) {
+						$(this).addClass('active');
+					}
+				});
+			});
+		});
+	</script>
 
-    @RenderSection("scripts", false)
+	@RenderSection("scripts", false)
 
-    @section scripts{
-        @Scripts.Render("~/bundles/jquery")
-    }
-    
+	@section scripts{
+		@Scripts.Render("~/bundles/jquery")
+	}
+	
 </body>
 </html>

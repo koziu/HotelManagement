@@ -5,6 +5,7 @@ using System.Transactions;
 using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
+using HotelManagement.Mvc.DAL.Context;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using HotelManagement.Mvc.Filters;
@@ -16,6 +17,7 @@ namespace HotelManagement.Mvc.Controllers
   [InitializeSimpleMembership]
   public class AccountController : Controller
   {
+    private HotelManagementContext db = new HotelManagementContext();
     //
     // GET: /Account/Login
 
@@ -80,6 +82,10 @@ namespace HotelManagement.Mvc.Controllers
         {
           WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
           WebSecurity.Login(model.UserName, model.Password);
+          model.Client.Id = Guid.NewGuid();
+          db.ClientModels.Add(model.Client);
+          db.SaveChangesAsync();
+
           return RedirectToAction("Index", "Home");
         }
         catch (MembershipCreateUserException e)
