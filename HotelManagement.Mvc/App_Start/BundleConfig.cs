@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace HotelManagement.Mvc.App_Start
+namespace HotelManagement.Mvc
 {
   public class BundleConfig
   {

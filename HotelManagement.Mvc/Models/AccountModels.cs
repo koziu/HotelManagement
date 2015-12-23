@@ -11,7 +11,7 @@ namespace HotelManagement.Mvc.Models
     {
     }
 
-    public DbSet<UserProfile> UserProfiles { get; set; }
+
   }
 
   [Table("UserProfile")]

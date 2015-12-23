@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace HotelManagement.Mvc.App_Start
+namespace HotelManagement.Mvc
 {
   public class RouteConfig
   {

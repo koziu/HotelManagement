@@ -1,4 +1,4 @@
-﻿@model HotelManagement.Mvc.Models.LoginModel
+﻿@model HotelManagement.Mvc.Models.LoginViewModel
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
@@ -27,10 +27,10 @@
                                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
                             </li>
                         </ol>
-                        <input type="submit" value="Log in" />
+                        <input type="submit" value="Zaloguj" class="btn btn-danger"/>
                     </fieldset>
                     <p>
-                        @Html.ActionLink("Register", "Register") if you don't have an account.
+                        @Html.ActionLink("Zarejestruj", "Register") if you don't have an account.
                     </p>
                 }
             </div>
@@ -39,7 +39,7 @@
 </section>
 <section class="social" id="socialLoginForm">
     <h2>Use another service to log in.</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+    @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
 </section>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Web.WebPages.OAuth;
 using HotelManagement.Mvc.Models;
 
-namespace HotelManagement.Mvc.App_Start
+namespace HotelManagement.Mvc
 {
   public static class AuthConfig
   {

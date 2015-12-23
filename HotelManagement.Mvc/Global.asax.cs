@@ -1,10 +1,7 @@
-﻿using System.Data.Entity;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using HotelManagement.Mvc.App_Start;
-using HotelManagement.Mvc.DAL.Context;
 
 namespace HotelManagement.Mvc
 {

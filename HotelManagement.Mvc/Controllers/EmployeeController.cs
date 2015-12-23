@@ -8,6 +8,7 @@ using HotelManagement.Mvc.Models;
 
 namespace HotelManagement.Mvc.Controllers
 {
+  [Authorize(Roles = "Client")]
   public class EmployeeController : Controller
   {
     private readonly HotelManagementContext db = new HotelManagementContext();
